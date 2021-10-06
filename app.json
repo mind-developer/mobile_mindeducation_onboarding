@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "mobile_mindeducation_onboarding",
-    "slug": "mobile_mindeducation_onboarding",
+    "name": "MCE_Mobile_v2",
+    "slug": "MCE_Mobile_v2",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

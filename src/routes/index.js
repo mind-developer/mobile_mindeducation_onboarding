@@ -15,7 +15,7 @@ export function Routes() {
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
         <ActivityIndicator
           size={Platform.OS === "android" ? 100 : "large"}
-          color={colors.purple}
+          color={colors.pink}
         />
       </View>
     );

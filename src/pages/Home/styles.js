@@ -11,7 +11,7 @@ export const Container = styled.View`
   padding-top: ${Platform.OS === "android"
     ? `${StatusBar.currentHeight ?? 0 + 36}px`
     : `${getStatusBarHeight() + 36}px`};
-  background-color: ${colors.background};
+  background-color: ${colors.white};
 `;
 
 export const Header = styled.View`
@@ -39,7 +39,7 @@ export const ProfileContent = styled.View`
 
 export const ProfileContentImage = styled.Image`
   margin-top: -152px;
-  width: 304px;
+  width: 100%;
   height: 304px;
 `;
 
@@ -57,18 +57,24 @@ export const UserWelcomeText = styled.Text`
 `;
 
 export const UserWelcomeSpanText = styled.Text`
-  color: ${colors.purple};
+  color: ${colors.pink};
 `;
 
-export const UserEmail = styled.Text`
+export const UserToken = styled.Text`
   background-color: ${colors.purpleLight};
   border-radius: 5px;
   margin-top: 8px;
   padding: 3px 0;
   text-align: center;
-  color: ${colors.purple};
+  color: ${colors.pink};
   font-family: ${fonts.poppins400};
   font-size: 14px;
+`;
+
+export const RefreshToken = styled.TouchableOpacity`
+  margin-top: 10px;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const EditProfileButton = styled(RectButton)`

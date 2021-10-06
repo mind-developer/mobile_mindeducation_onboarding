@@ -1,13 +1,13 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, FontAwesome } from "@expo/vector-icons";
 import Toast from "react-native-toast-message";
 
 import { useAuth } from "../../hooks/useAuth";
 
 import { colors } from "../../styles/colors";
 
-import developerActivityImg from "../../assets/developer-activity.png";
+import homeImage from "../../assets/homeImage.png";
 
 import {
   Container,
@@ -19,7 +19,8 @@ import {
   ProfileUserContent,
   UserWelcomeText,
   UserWelcomeSpanText,
-  UserEmail,
+  UserToken,
+  RefreshToken,
   EditProfileButton,
   EditProfileButtonText,
 } from "./styles";
@@ -43,6 +44,18 @@ export function Home() {
     }
   }
 
+  async function refreshToken() {
+    try {
+      //to do
+    } catch {
+      Toast.show({
+        type: "error",
+        text1: "Erro",
+        text2: "Não foi possivel atualizar o token",
+      });
+    }
+  }
+
   return (
     <Container>
       <Header>
@@ -54,7 +67,7 @@ export function Home() {
       </Header>
 
       <ProfileContent>
-        <ProfileContentImage source={developerActivityImg} />
+        <ProfileContentImage source={homeImage} />
 
         <ProfileUserContent>
           <UserWelcomeText>
@@ -64,7 +77,14 @@ export function Home() {
             </UserWelcomeSpanText>
           </UserWelcomeText>
 
-          <UserEmail>{user?.email}</UserEmail>
+          <UserToken>
+            Seu token: token aqui
+            {/* {user?.email} */}
+          </UserToken>
+
+          <RefreshToken onPress={refreshToken}>
+            <FontAwesome name="refresh" size={24} color={colors.pink} />
+          </RefreshToken>
 
           <EditProfileButton onPress={() => navigation.navigate("EditProfile")}>
             <EditProfileButtonText>Editar perfil</EditProfileButtonText>

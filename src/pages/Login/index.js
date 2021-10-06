@@ -72,7 +72,7 @@ export function Login() {
   return (
     <Container>
       <Title>Entrar</Title>
-      <SubTitle>O seu passaporte para o futuro</SubTitle>
+      <SubTitle>Seu condomínio com segurança</SubTitle>
 
       <Input
         placeholder="E-mail"
@@ -114,15 +114,6 @@ export function Login() {
           onPress={() => navigation.navigate("ForgotPassword")}
         >
           <ParagraphLinkText>Clique aqui</ParagraphLinkText>
-        </TouchableWithoutFeedback>
-      </ParagraphText>
-
-      <ParagraphText>
-        Não possui uma conta?{" "}
-        <TouchableWithoutFeedback
-          onPress={() => navigation.navigate("Register")}
-        >
-          <ParagraphLinkText>Registrar-se</ParagraphLinkText>
         </TouchableWithoutFeedback>
       </ParagraphText>
     </Container>

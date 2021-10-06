@@ -9,7 +9,7 @@ export const Container = styled(RectButton)`
   height: 60px;
   align-items: center;
   justify-content: center;
-  background-color: ${colors.purple};
+  background-color: ${colors.pink};
   border-radius: 8px;
 `;
 

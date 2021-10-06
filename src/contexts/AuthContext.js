@@ -19,8 +19,8 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     async function loadStoragedData() {
       const [storagedUser, storagedToken] = await AsyncStorage.multiGet([
-        "@Mindeducation:user",
-        "@Mindeducation:token",
+        "@MindMCEv2:user",
+        "@MindMCEv2:token",
       ]);
 
       if (storagedToken[1] && storagedUser[1]) {
@@ -42,11 +42,11 @@ export function AuthProvider({ children }) {
 
     try {
       await AsyncStorage.setItem(
-        "@Mindeducation:user",
+        "@MindMCEv2:user",
         JSON.stringify(response.data.user)
       );
       await AsyncStorage.setItem(
-        "@Mindeducation:token",
+        "@MindMCEv2:token",
         JSON.stringify(response.data.token)
       );
     } catch {
@@ -64,8 +64,8 @@ export function AuthProvider({ children }) {
 
   const signOut = useCallback(async () => {
     try {
-      await AsyncStorage.removeItem("@Mindeducation:user");
-      await AsyncStorage.removeItem("@Mindeducation:token");
+      await AsyncStorage.removeItem("@MindMCEv2:user");
+      await AsyncStorage.removeItem("@MindMCEv2:token");
 
       setUser();
     } catch {
@@ -83,7 +83,7 @@ export function AuthProvider({ children }) {
       const response = await api.get(`/users/${id}`);
       setUser(response.data);
       await AsyncStorage.setItem(
-        "@Mindeducation:user",
+        "@MindMCEv2:user",
         JSON.stringify(response.data)
       );
     } catch (err) {
